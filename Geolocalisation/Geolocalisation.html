@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+		<meta charset="UTF-8" />
+		<title>Geolocalisation du Maniema</title>
+		<style type="text/css">
+			html {
+				height: 100%
+			}
+			body {
+				height: 100%;
+				margin: 0;
+				padding: 0
+			}
+			#EmplacementDeMaCarte {
+				height: 100%
+			}
+		</style>
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript">
+			function initialisation(){
+				var centreCarte = new google.maps.LatLng(-3.073092900000000000, 26.041388900000015000);
+				var optionsCarte = {
+					zoom: 8,
+					center: centreCarte
+				}
+				var maCarte = new google.maps.Map(document.getElementById("EmplacementDeMaCarte"), optionsCarte);
+			}
+			google.maps.event.addDomListener(window, 'load', initialisation)
+		</script>
+	</head>
+	<body>
+		<div id="EmplacementDeMaCarte"></div>
+		<noscript>
+			<p>Attention : </p>
+			<p>Afin de pouvoir utiliser Google Maps, JavaScript doit être activé.</p>
+			<p>Or, il semble que JavaScript est désactivé ou qu'il ne soit pas supporté par votre navigateur.</p>
+			<p>Pour afficher Google Maps, activez JavaScript en modifiant les options de votre navigateur, puis essayez à nouveau.</p>
+		</noscript>
+	</body>
+</html>
